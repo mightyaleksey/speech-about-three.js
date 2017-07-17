@@ -6,10 +6,10 @@
 
   utils.loadObject('models/gta-spano-2010.json')
     .then(function (obj) {
-      obj.scale.set(0.1, 0.1, 0.1);
-
       scene.add(obj);
       utils.render(animate);
+
+      return obj;
     })
     .catch(er => console.error(er));
 
@@ -17,14 +17,14 @@
   const renderer = new THREE.WebGLRenderer();
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-  camera.position.set(0, 5, 20);
+  camera.position.set(0, 50, 200);
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  controls.target.set(0, 5, 0);
+  controls.target.set(0, 50, 0);
   controls.update();
 
   const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-  directionalLight.position.set(-10, 20, 20);
+  directionalLight.position.set(-100, 200, 200);
   scene.add(directionalLight);
 
   const light = new THREE.AmbientLight(0x404040); // soft white light
