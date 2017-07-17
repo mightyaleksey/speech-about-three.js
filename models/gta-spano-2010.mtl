@@ -1,0 +1,49 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+newmtl Material__89
+Ka  0.0 0.0 0.0
+Kd  0.8 0.8 0.8
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl 23_-_Default
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd GtaRE.jpg
+#
+newmtl 24_-_Default
+Ka  0.0 0.0 0.0
+Kd  0.8 0.8 0.8
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub Material__114 (2) to come 
+#
+newmtl Material__89
+Ka  0.0 0.0 0.0
+Kd  0.8 0.8 0.8
+Ks  0.0 0.0 0.0
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl 23_-_Default
+Ka  0.6 0.6 0.6
+Kd  0.6 0.6 0.6
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd GtaRE.jpg
+#
+# Multi/Sub Material__114 done 
+#
+# EOF
