@@ -6,8 +6,8 @@
 
   Promise.all([
     utils.loadObject('models/2003eclipse.json'),
-    utils.loadTexture('models/2003eclipse/eclipse2003-diffuse-purple.tga'),
-    utils.loadTexture('models/2003eclipse/wheel-diffuse.tga'),
+    utils.loadTGA('models/2003eclipse/eclipse2003-diffuse-purple.tga'),
+    utils.loadTGA('models/2003eclipse/wheel-diffuse.tga'),
   ])
     .then(function (parts) {
       const obj = parts[0];
@@ -33,7 +33,8 @@
 
       scene.add(obj);
       utils.render(animate);
-    });
+    })
+    .catch(er => console.error(er));
 
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 300);
   const renderer = new THREE.WebGLRenderer();
@@ -45,7 +46,8 @@
   controls.target.set(0, 5, 0);
   controls.update();
 
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  directionalLight.position.set(-10, 20, 20);
   scene.add(directionalLight);
 
   const light = new THREE.AmbientLight(0x404040); // soft white light

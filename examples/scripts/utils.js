@@ -32,6 +32,21 @@
     });
   }
 
+  function loadTGA(url) {
+    return new Promise(function (resolve, reject) {
+      if (!THREE.TGALoader) {
+        throw new Error('TGALoader is unavailable. You should plug it manually');
+      }
+
+      new THREE.TGALoader().load(
+        url,
+        function handleResult(obj) { resolve(obj); },
+        noop, // progress function xhr => xhr.loader / xhr.total
+        function handleError(er) { reject(er); }
+      );
+    });
+  }
+
   function render(renderer) {
     function tick() {
       requestAnimationFrame(tick);
@@ -44,6 +59,7 @@
   window.utils = {
     loadObject: loadObject,
     loadTexture: loadTexture,
+    loadTGA: loadTGA,
     noop: noop,
     render: render,
   };
